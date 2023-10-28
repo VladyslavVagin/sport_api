@@ -58,11 +58,11 @@ async function markupCards(query, page = 1) {
         paginations.style.display = 'flex';
       }
 
-      cards.forEach(card => cardsMarkup += `<li class="exercise-card-item" data-query="${card.name}" data-filter="${filterText}">
-                <img class="exercise-card-img" src="${card.imgURL}" alt="${card.name} card exercises" loading="lazy">
-                <div class="exercise-card-text-container">
-                    <h2 class="exercise-card-title">${card.name}</h2>
-                    <p class="exercise-card-filter">${filterText}</p>
+      cards.forEach(card => cardsMarkup += `<li class="ex-card-item" data-query="${card.name}" data-filter="${filterText}">
+                <img class="ex-card-img" src="${card.imgURL}" alt="${card.name} card exercises" loading="lazy">
+                <div class="ex-card-text-container">
+                    <h2 class="ex-card-title">${card.name}</h2>
+                    <p class="ex-card-filter">${filterText}</p>
                 </div>
             </li>`)
 

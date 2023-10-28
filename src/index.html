@@ -66,100 +66,237 @@
               "
               type="image/jpg"
             />
-            <img class="hero-image" src="./images/hero/hero-mob.jpg" alt="sport-girls" loading="lazy">
+            <img
+              class="hero-image"
+              src="./images/hero/hero-mob.jpg"
+              alt="sport-girls"
+              loading="lazy"
+            />
           </picture>
           <ul class="tags-list">
             <li class="tags-list-item">
-                <p class="tag">#Sport</p>
+              <p class="tag">#Sport</p>
             </li>
             <li class="tags-list-item">
-                <p class="tag">#Healthy</p>
+              <p class="tag">#Healthy</p>
             </li>
             <li class="tags-list-item">
-                <p class="tag">#Workout</p>
+              <p class="tag">#Workout</p>
             </li>
             <li class="tags-list-item">
-                <p class="tag">#Diet</p>
+              <p class="tag">#Diet</p>
             </li>
           </ul>
         </div>
       </div>
     </section>
     <!-- ================================================================================================= -->
+    <!--================================ SECTIONS EXERCISES  ==============================================-->
     <section class="exercises">
-    <div class="container">
-  
-      <!-- TITLE -->
-      <h2 class="exercises-title">Exercises</h2>
+      <div class="container">
+        <!-- TITLE -->
+        <h2 class="exercises-title">Exercises</h2>
 
-      <!-- INPUT  -->
-      <div class="search-exercise-input">
-          <form class="form-search-input">
-            <input class="search-input" placeholder="Search" type="text" name="filter">
+        <!-- INPUT  -->
+        <div class="search-exercise-input">
+          <form class="form-search-input" style="display: none">
+            <input
+              class="search-input"
+              placeholder="Search"
+              type="text"
+              name="filter"
+            />
             <button type="submit" class="search-btn">
               <svg class="search-btn-icon" width="20" height="20">
                 <use href="./images/icons.svg#icon-search"></use>
               </svg>
             </button>
           </form>
-      </div>
+        </div>
 
-      <!-- MENU FOR CHOOSE EXERCISES  -->
-      <ul class="nav-exercise">
-        <li class="nav-exercise-item">
-          <button type="button" class="nav-exercise-btn current" data-filter="Body_parts">Body parts</button>
-        </li>
-        <li class="nav-exercise-item">
-          <button type="button" class="nav-exercise-btn" data-filter="Muscles">Muscles</button>
-        </li>
-        <li class="nav-exercise-item">
-          <button type="button" class="nav-exercise-btn" data-filter="Equipment">Equipment</button>
-        </li>
-      </ul>
-
-      <!-- EXERCISES CONTAINER  -->
-      <div class="add-exercises-all">
-        <ul class="list-all-cards"></ul>
-        <div id="tui-pagination-container" class="tui-pagination"></div>
-      </div>
-    </div>
-  </section>
-<!-- ==================================== BURGER MENU ============================================ -->
-<div class="burger-backdrop is-hidden" data-burger>
-    <div class="burger-menu">
-        <div class="close-burger-btn">
-            <button type="button" class="close-burg" data-burger-close>
-                <svg class="close-icon" width="32" height="32">
-                    <use href="./images/icons.svg#icon-close"></use>
-                </svg>
+        <!-- MENU FOR CHOOSE EXERCISES  -->
+        <ul class="nav-exercise">
+          <li class="nav-exercise-item">
+            <button
+              type="button"
+              class="nav-exercise-btn current"
+              data-filter="Body_parts"
+            >
+              Body parts
             </button>
+          </li>
+          <li class="nav-exercise-item">
+            <button
+              type="button"
+              class="nav-exercise-btn"
+              data-filter="Muscles"
+            >
+              Muscles
+            </button>
+          </li>
+          <li class="nav-exercise-item">
+            <button
+              type="button"
+              class="nav-exercise-btn"
+              data-filter="Equipment"
+            >
+              Equipment
+            </button>
+          </li>
+        </ul>
+
+        <!-- EXERCISES CONTAINER  -->
+        <div class="add-exercises-all">
+          <ul class="list-all-cards"></ul>
+          <div id="tui-pagination-container" class="tui-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- =================================================================================================== -->
+    <!-- ========================== QUOTE OF THE DAY ========================================================= -->
+    <section class="quote-section">
+      <div class="container">
+        <div class="wrapper">
+          <div class="running-icon-container">
+            <svg class="running-icon" width="34" height="32">
+              <use href="./images/icons.svg#icon-run_grey"></use>
+            </svg>
+          </div>
+          <div class="quote-text-container">
+            <h2 class="quote-title">Quote of the day</h2>
+            <p class="quote-text">
+              A lot of times I find that people who are blessed with the most
+              talent don't ever develop that attitude, and the ones who aren't
+              blessed in that way are the most competitive and have the biggest
+              heart.
+            </p>
+            <p class="author">Tom Brady</p>
+          </div>
+          <svg class="inverted-icon" width="20" height="20">
+            <use href="./images/icons.svg#icon-inverted"></use>
+          </svg>
+        </div>
+        <div class="quote-image-container">
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./images/quote/quote-mob.jpg    1x,
+                ./images/quote/quote-mob-2x.jpg 2x
+              "
+              type="image/jpg"
+            />
+            <img
+              src="./images/quote/quote-mob.jpg"
+              alt="two sport girls"
+              class="quote-image"
+            />
+          </picture>
+        </div>
+        <div class="wrapper-quote">
+          <div class="gym-icon-container">
+            <svg class="gym-icon" width="20" height="20">
+              <use href="./images/icons.svg#icon-gym"></use>
+            </svg>
+          </div>
+          <div class="text-block">
+            <h3 class="time">110&nbsp;min</h3>
+            <p class="text-block-text">Daily norm of sports</p>
+            <p class="text-block-second">
+              The World Health Organization recommends at least 150 minutes of
+              moderate-intensity aerobic physical activity throughout the week
+              for adults aged 18-64. However, what happens if we adjust that
+              number to 110 minutes every day? While it might seem like a high
+              number to hit, dedicating 110 minutes daily to sporting activities
+              may offer unparalleled benefits to physical health, mental
+              well-being, and overall quality of life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================================================================================== -->
+    <!--=========================================================== FOOTER =======================================================-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-upper">
+          <div class="logo-container">
+            <a href="./index.html">
+              <svg class="logo-icon footer-logo" width="132" height="24">
+                <use href="./images/icons.svg#icon-logo"></use>
+              </svg>
+            </a>
+          </div>
+          <!--=========== SOCIAL MEDIA FOOTER ============-->
+          <ul class="burger-social-list footer-list">
+            <li class="social-item-burger">
+              <a href="">
+                <svg class="social-item-icon" width="40" height="40">
+                  <use href="./images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item-burger">
+              <a href="">
+                <svg class="social-item-icon" width="40" height="40">
+                  <use href="./images/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item-burger">
+              <a href="">
+                <svg class="social-item-icon" width="40" height="40">
+                  <use href="./images/icons.svg#icon-youtube"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- ================================================================================================================================ -->
+    <!-- ==================================== BURGER MENU ============================================ -->
+    <div class="burger-backdrop is-hidden" data-burger>
+      <div class="burger-menu">
+        <div class="close-burger-btn">
+          <button type="button" class="close-burg" data-burger-close>
+            <svg class="close-icon" width="32" height="32">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
         </div>
         <ul class="burg-list-menu">
-            <li><a href="./index.html" class="burger-menu-link">Home</a></li>
-            <li><a href="" class="burger-menu-link">Favorites</a></li>
+          <li><a href="./index.html" class="burger-menu-link">Home</a></li>
+          <li><a href="" class="burger-menu-link">Favorites</a></li>
         </ul>
 
         <!--=========== SOCIAL MEDIA  ============-->
         <ul class="burger-social-list">
-            <li class="social-item-burger"><a href="">
-                <svg class="social-item-icon" width="40" height="40">
-                    <use href="./images/icons.svg#icon-facebook"></use>
-                </svg>
-            </a></li>
-            <li class="social-item-burger"><a href="">
-                <svg class="social-item-icon" width="40" height="40">
-                    <use href="./images/icons.svg#icon-instagram"></use>
-                </svg>
-            </a></li>
-            <li class="social-item-burger"><a href="">
-                <svg class="social-item-icon" width="40" height="40">
-                    <use href="./images/icons.svg#icon-youtube"></use>
-                </svg>
-            </a></li>
+          <li class="social-item-burger">
+            <a href="">
+              <svg class="social-item-icon" width="40" height="40">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item-burger">
+            <a href="">
+              <svg class="social-item-icon" width="40" height="40">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item-burger">
+            <a href="">
+              <svg class="social-item-icon" width="40" height="40">
+                <use href="./images/icons.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
         </ul>
+      </div>
     </div>
-</div>
-<!-- ==================================================================================================== -->
+    <!-- ==================================================================================================== -->
     <script src="./js/index.js" type="module"></script>
     <script src="./js/burger-menu.js" type="module"></script>
     <script src="./js/api_sport.js" type="module"></script>

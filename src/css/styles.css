@@ -2,8 +2,11 @@
   scroll-behavior: smooth;
   --color-black: #242424;
   --color-white: #f4f4f4;
+  --color-quote-text: rgba(244, 244, 244, 0.6);
   --color-border: rgba(244, 244, 244, 0.1);
-  --color-not-active: rgba(36, 36, 36, 0.60);
+  --color-text-card: rgba(244, 244, 244, 0.4);
+  --color-not-active: rgba(36, 36, 36, 0.6);
+  --color-megawhite: #fff;
   font-family: Neue Montreal, sans-serif;
 }
 /*======================================== FONTS  ==========================================*/
@@ -237,39 +240,187 @@ img {
   background-color: inherit;
 }
 .form-search-input {
-    position: relative;
-    padding-top: 40px;
+  position: relative;
+  padding-top: 40px;
 }
 .search-btn {
-    position: absolute;
-    background-color: inherit;
-    top: 60%;
-    right: 4%;
+  position: absolute;
+  background-color: inherit;
+  top: 60%;
+  right: 4%;
 }
 .nav-exercise {
-    display: flex;
-    column-gap: 20px;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 28px;
-    margin-top: 14px;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 28px;
+  margin-top: 14px;
 }
 .nav-exercise-btn {
-    color: var(--color-not-active);
-    background-color: inherit;
-    position: relative;
+  color: var(--color-not-active);
+  background-color: inherit;
+  position: relative;
 }
 
 .current {
-    color: var(--color-black);
+  color: var(--color-black);
 }
 .current::after {
-    content: "";
-    width: 90%;
-    background-color: var(--color-black);
-    height: 4px;
-    position: absolute;
-    bottom: -8px;
-    left: 5%;
-    border-radius: 2px;
+  content: '';
+  width: 90%;
+  background-color: var(--color-black);
+  height: 4px;
+  position: absolute;
+  bottom: -8px;
+  left: 5%;
+  border-radius: 2px;
+}
+/* ================== CARDS EXERCISES ======================================== */
+.list-all-cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.ex-card-item {
+  position: relative;
+}
+.ex-card-text-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 0.5) 0%,
+    rgba(17, 17, 17, 0.5) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ex-card-img {
+  border-radius: 12px;
+  z-index: 4;
+  object-fit: cover;
+  display: block;
+}
+.ex-card-title {
+  color: var(--color-white);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+.ex-card-filter {
+  color: var(--color-text-card);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  line-height: 1.5;
+}
+/* ======================================================================================= */
+/* =========================== QUOTE OF THE DAY ========================================== */
+.quote-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.running-icon {
+  fill: grey;
+}
+.wrapper {
+  background-color: var(--color-black);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  column-gap: 18px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.quote-title {
+  color: var(--color-white);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.author,
+.quote-text {
+  color: var(--color-quote-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+}
+.author {
+  color: var(--color-white);
+  margin-top: 16px;
+}
+.inverted-icon {
+  position: absolute;
+  right: 5%;
+}
+.quote-image {
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.gym-icon {
+  fill: var(--color-white);
+  background-color: var(--color-black);
+}
+.gym-icon-container {
+  padding: 6px;
+  background-color: var(--color-black);
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: 80px;
+}
+.time {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.text-block-text {
+  color: var(--color-not-active);
+  margin-bottom: 16px;
+}
+.text-block-second {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  max-height: 105px;
+  overflow: scroll;
+  
+}
+.wrapper-quote {
+  display: flex;
+  column-gap: 18px;
+  padding: 20px;
+  background-color: var(--color-megawhite);
+  border-radius: 20px;
+}
+/* =========================================================================================================================== */
+/* =================================================================================================================================== */
+/*================================================ FOOTER ==================================================== */
+.footer {
+  padding-bottom: 20px;
+  padding-top: 40px;
+  background-color: var(--color-black);
+}
+.footer-logo {
+  fill: var(--color-white);
+}
+.footer-upper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 40px;
 }
