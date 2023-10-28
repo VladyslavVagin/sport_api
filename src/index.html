@@ -4,15 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sport_Energy</title>
-
-    <!-- GOOGLE FONTS  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
-      rel="stylesheet"
-    />
-
     <!-- Modern Normalizer  -->
     <link
       rel="stylesheet"
@@ -95,11 +86,44 @@
       </div>
     </section>
     <!-- ================================================================================================= -->
-    <div class="container visually-hidden">
-      <div class="exercises">
-        <ul class="list-exercise"></ul>
+    <section class="exercises">
+    <div class="container">
+  
+      <!-- TITLE -->
+      <h2 class="exercises-title">Exercises<span></span></h2>
+
+      <!-- INPUT  -->
+      <div class="search-exercise-input">
+          <form class="form-search-input">
+            <input class="search-input" placeholder="Search" type="text" name="filter">
+            <button type="submit" class="search-btn">
+              <svg class="search-btn-icon" width="20" height="20">
+                <use href="./images/icons.svg#icon-search"></use>
+              </svg>
+            </button>
+          </form>
+      </div>
+
+      <!-- MENU FOR CHOOSE EXERCISES  -->
+      <ul class="nav-exercise">
+        <li class="nav-exercise-item">
+          <button type="button" class="nav-exercise-btn current">Body parts</button>
+        </li>
+        <li class="nav-exercise-item">
+          <button type="button" class="nav-exercise-btn">Muscles</button>
+        </li>
+        <li class="nav-exercise-item">
+          <button type="button" class="nav-exercise-btn">Equipment</button>
+        </li>
+      </ul>
+
+      <!-- EXERCISES CONTAINER  -->
+      <div class="add-exercises-all">
+        <ul class="list-all-cards"></ul>
+        <div id="tui-pagination-container" class="tui-pagination"></div>
       </div>
     </div>
+  </section>
 <!-- ==================================== BURGER MENU ============================================ -->
 <div class="burger-backdrop is-hidden" data-burger>
     <div class="burger-menu">
