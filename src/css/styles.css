@@ -223,7 +223,6 @@ img {
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.035rem;
-  margin-bottom: 2.5rem;
 }
 .search-btn-icon {
   fill: var(--color-white);
@@ -239,12 +238,12 @@ img {
 }
 .form-search-input {
     position: relative;
-    margin-bottom: 20px;
+    padding-top: 40px;
 }
 .search-btn {
     position: absolute;
     background-color: inherit;
-    top: 24%;
+    top: 60%;
     right: 4%;
 }
 .nav-exercise {
@@ -253,21 +252,24 @@ img {
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 28px;
+    margin-top: 14px;
 }
 .nav-exercise-btn {
     color: var(--color-not-active);
     background-color: inherit;
+    position: relative;
 }
+
 .current {
     color: var(--color-black);
 }
 .current::after {
     content: "";
-    width: 100%;
+    width: 90%;
     background-color: var(--color-black);
     height: 4px;
     position: absolute;
-    bottom: -1px;
-    left: 0;
+    bottom: -8px;
+    left: 5%;
     border-radius: 2px;
 }
