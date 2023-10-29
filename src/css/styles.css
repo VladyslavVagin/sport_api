@@ -7,6 +7,7 @@
   --color-text-card: rgba(244, 244, 244, 0.4);
   --color-not-active: rgba(36, 36, 36, 0.6);
   --color-megawhite: #fff;
+  --color-footer: #C6CDD1;
   font-family: Neue Montreal, sans-serif;
 }
 /*======================================== FONTS  ==========================================*/
@@ -167,11 +168,13 @@ img {
   top: 0;
   right: 0;
   background-color: #24242444;
+  z-index: 10;
   width: 100vw;
   height: 100vh;
 }
 .burger-menu {
   position: absolute;
+  z-index: 11;
   top: 0;
   right: 0;
   background-color: var(--color-black);
@@ -423,4 +426,59 @@ img {
   row-gap: 20px;
   align-items: flex-start;
   margin-bottom: 40px;
+}
+.footer-title {
+  color: var(--color-white);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.footer-subscribe-text {
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  margin-bottom: 20px;
+}
+.footer-input {
+  background-color: inherit;
+  padding: 12px 14px;
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid var(--color-white);
+}
+.footer-subscribe-btn {
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+}
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+.footer-second-part {
+  color: var(--color-footer);
+  margin-top: 100px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+}
+.footer-text-one {
+  margin-bottom: 10px;
+}
+.privacy-policy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
