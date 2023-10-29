@@ -532,6 +532,10 @@ img {
 }
 /* ======================================================================================================= */
 /* ============================================================================================================ */
+.tui-first, .tui-prev, .tui-next, .tui-last {
+  display: none;
+}
+
 .tui-pagination {
   color: var(--color-black);
   margin-top: 20px;
@@ -612,14 +616,14 @@ img {
 .text-card {
   color: rgba(36, 36, 36, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
 }
 .value-card {
   color: var(--color-black);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
   text-transform: capitalize;
@@ -627,7 +631,11 @@ img {
 .third-part {
   display: flex;
   align-items: center;
-  column-gap: 6px;
+  column-gap: 10px;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
 }
 .exercise-section-title-span {
   text-transform: capitalize;
