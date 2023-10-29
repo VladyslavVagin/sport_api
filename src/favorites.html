@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sport_Energy</title>
+    <!-- Modern Normalizer  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.css"
+      integrity="sha512-gA2Bvu0/hw4oj0Lp8ZHjK+o3S4BE5m8d/wNVy6ktKLhHKPpWLQwv9ixzuWirWOakoJqlBdePq2NhoCaUOQ5npQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS Styles  -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- =================================================  HEADER ======================================================== -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-container">
+            <a href="./index.html">
+              <svg class="logo-icon" width="132" height="24">
+                <use href="./images/icons.svg#icon-logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="burger-btn-container">
+            <button type="button" class="open-burger" data-burger-open>
+              <svg class="burger-icon" width="32" height="32">
+                <use href="./images/icons.svg#icon-burger"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ====================================================================================================== -->
+    <section class="section-favorites">
+      <div class="container">
+        <h2 class="favorites-title">Favorites</h2>
+        <div class="wrapper">
+          <div class="running-icon-container">
+            <svg class="running-icon" width="34" height="32">
+              <use href="./images/icons.svg#icon-run_grey"></use>
+            </svg>
+          </div>
+          <div class="quote-text-container">
+            <h2 class="quote-title">Quote of the day</h2>
+            <p class="quote-text">
+              A lot of times I find that people who are blessed with the most
+              talent don't ever develop that attitude, and the ones who aren't
+              blessed in that way are the most competitive and have the biggest
+              heart.
+            </p>
+          </div>
+          <svg class="inverted-icon" width="20" height="20">
+            <use href="./images/icons.svg#icon-inverted"></use>
+          </svg>
+        </div>
+        <div class="wrapper-quote favorites-wrapper-quote">
+          <div class="favorites-icon-container">
+            <svg class="favorites-gym-icon" width="20" height="20">
+              <use href="./images/icons.svg#icon-gym"></use>
+            </svg>
+          </div>
+          <div class="text-block">
+            <h3 class="time">110&nbsp;min</h3>
+            <p class="text-block-text">Daily norm of sports</p>
+          </div>
+        </div>
+        <div class="favorites-image-container">
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./images/favorites/favorites-mob.jpg    1x,
+                ./images/favorites/favorites-mob-2x.jpg 2x
+              "
+              type="image/jpg"
+            />
+            <img
+              src="./images/favorites/favorites-mob.jpg"
+              alt="two sport-girls"
+              class="favorites-image"
+            />
+          </picture>
+        </div>
+        <p class="text-no-favorites">
+          It appears that you haven't added any exercises to your favorites yet.
+          To get started, you can add exercises that you like to your favorites
+          for easier access in the future.
+        </p>
+      </div>
+    </section>
+    <!-- ==================================== BURGER MENU ============================================ -->
+    <div class="burger-backdrop is-hidden" data-burger>
+      <div class="burger-menu">
+        <div class="close-burger-btn">
+          <button type="button" class="close-burg" data-burger-close>
+            <svg class="close-icon" width="32" height="32">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+        <ul class="burg-list-menu">
+          <li><a href="./index.html" class="burger-menu-link">Home</a></li>
+          <li>
+            <a href="./favorites.html" class="burger-menu-link">Favorites</a>
+          </li>
+        </ul>
+
+        <!--=========== SOCIAL MEDIA  ============-->
+        <ul class="burger-social-list">
+          <li class="social-item-burger">
+            <a href="">
+              <svg class="social-item-icon" width="40" height="40">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item-burger">
+            <a href="">
+              <svg class="social-item-icon" width="40" height="40">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item-burger">
+            <a href="">
+              <svg class="social-item-icon" width="40" height="40">
+                <use href="./images/icons.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- ==================================================================================================== -->
+    <script src="./js/burger-menu.js" type="module"></script>
+  </body>
+</html>
