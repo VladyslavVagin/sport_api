@@ -459,6 +459,7 @@ img {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
+  background-color: var(--color-white);
 }
 .subscribe-form {
   display: flex;
