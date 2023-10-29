@@ -1,8 +1,8 @@
 // @ts-nocheck
 import axios from 'axios';
 import { Notify } from 'notiflix';
-import { Pagination } from 'tui-pagination';
 import { createCards } from './markup';
+import { setPagination } from './pagination';
 
 // MALE ALL CONSTANT
 const allCards = document.querySelector('.list-all-cards');
@@ -51,9 +51,7 @@ export async function getCardsFromApi(query, limit, page = 1) {
 }
 
 export async function markupCards(query, page = 1) {
-  // @ts-ignore
   allCards.dataset.page = 'cards';
-  // @ts-ignore
   paginations.style.display = 'none';
 
   filterText = query.split('_').join(' ');
@@ -64,9 +62,9 @@ export async function markupCards(query, page = 1) {
     limit,
     page
   );
+    setPagination(totalPages, page);
 
   if (!(totalPages === 1)) {
-    // @ts-ignore
     paginations.style.display = 'flex';
   }
 
@@ -89,6 +87,7 @@ markupCards('Body parts');
 // ====================================================================================
 let queryValue;
 let filterValue;
+let idValue;
 let currentPage = 0;
 let limitCards = 10;
 if (window.innerWidth < 768) {
@@ -123,7 +122,7 @@ async function genereateCards(queryValue, filterValue, page = 1) {
   const data = await fetchCards(filterValue, queryValue, page);
   const { totalPages } = data;
   currentPage = page;
-  // makePagination(totalPages, page);
+  setPagination(totalPages, page);
 
   if (totalPages > 1) {
     paginations.style.display = 'flex';
@@ -147,4 +146,11 @@ async function fetchCards(part, category, page) {
 
 // =====================================================
 // ====================================================
-// PAGINATION =========================================
+function pushOnModal () {
+   const nextBtns = document.querySelectorAll('.start-btn');
+   nextBtns.forEach(btn => {
+    btn.addEventListener('click', (ev) => {
+      idValue = btn.dataset.id;
+    })
+   })
+};

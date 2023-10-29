@@ -7,7 +7,8 @@
   --color-text-card: rgba(244, 244, 244, 0.4);
   --color-not-active: rgba(36, 36, 36, 0.6);
   --color-megawhite: #fff;
-  --color-footer: #C6CDD1;
+  --color-footer: #c6cdd1;
+  --color-pagination: #d4d4d4;
   font-family: Neue Montreal, sans-serif;
 }
 /*======================================== FONTS  ==========================================*/
@@ -288,6 +289,7 @@ img {
 
 .ex-card-item {
   position: relative;
+  cursor: pointer;
 }
 .ex-card-text-container {
   position: absolute;
@@ -313,6 +315,8 @@ img {
   z-index: 4;
   object-fit: cover;
   display: block;
+  height: 225px;
+  width: 335px;
 }
 .ex-card-title {
   color: var(--color-white);
@@ -321,6 +325,7 @@ img {
   font-size: 20px;
   font-weight: 400;
   line-height: 1;
+  text-transform: capitalize;
 }
 .ex-card-filter {
   color: var(--color-text-card);
@@ -400,7 +405,6 @@ img {
   line-height: 1.28;
   max-height: 105px;
   overflow: scroll;
-  
 }
 .wrapper-quote {
   display: flex;
@@ -529,4 +533,98 @@ img {
 /* ============================================================================================================ */
 .tui-pagination {
   color: var(--color-black);
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.tui-page-btn {
+  color: var(--color-pagination);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.8px;
+}
+.tui-is-selected {
+  color: var(--color-black);
+  padding: 6px 12px;
+  border: 1px solid var(--color-black);
+  border-radius: 80px;
+}
+.badge-text {
+  color: var(--color-black);
+  font-size: 12px;
+  font-weight: 500;
+}
+.badge {
+  padding: 5px 12px;
+  border: 1px solid var(--color-black);
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.exercise-card {
+  background-color: var(--color-megawhite);
+  padding: 16px;
+  border-radius: 15px;
+}
+.exercise-card-rating {
+  display: flex;
+  align-items: center;
+  column-gap: 2px;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.first-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 27px;
+}
+.start-btn-icon {
+  stroke: var(--color-black);
+}
+.start-btn {
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+.second-part {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  margin-bottom: 18px;
+}
+.exercise-name {
+  text-transform: capitalize;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+.text-card {
+  color: rgba(36, 36, 36, 0.4);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.value-card {
+  color: var(--color-black);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+.third-part {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }

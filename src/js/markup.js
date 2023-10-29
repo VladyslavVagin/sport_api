@@ -1,3 +1,5 @@
+// @ts-nocheck
+import icons from '../images/icons.svg';
 export function createCards(arr) {
     return arr
       .map(
@@ -9,20 +11,20 @@ export function createCards(arr) {
             </div>
             <div class="exercise-card-rating">
               <p class="rating-text">${rating.toFixed(1)}</p>
-              <svg class="icon-star" width="18" height="18">
-                <use href="./images/icons.svg#icon-yellow_star"></use>
+              <svg class="icon-star" width="12" height="12">
+                <use href="${icons}#icon-yellow_star"></use>
               </svg>
             </div>
             <button class="start-btn" data-id="${_id}" type="submit">
               Start
               <svg class="start-btn-icon" width="16" height="16">
-                <use href="./images/icons#icon-arrow"></use>
+                <use href="${icons}#icon-arrow"></use>
               </svg>
             </button>
           </div>
           <div class="second-part">
             <svg class="run-man-icon" width="24" height="24">
-              <use href="./images/icons#icon-run"></use>
+              <use href="${icons}#icon-run"></use>
             </svg>
             <p class="exercise-name">${name}</p>
           </div>

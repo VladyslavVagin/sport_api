@@ -29,5 +29,11 @@ export function setPagination (totalPages = 1, page) {
       });
       return;
     }
+
+    instance.on('afterMove', (event) => {
+      const currentPage = event.page;
+      const query = document.querySelector('.current').dataset.filter;
+      markupCards(query, currentPage);
+    })
 };
 
