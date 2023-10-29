@@ -1,26 +1,33 @@
-// import { Pagination } from "tui-pagination";
+// @ts-nocheck
+import Pagination from 'tui-pagination';
+import { getCardsFromApi } from './api_sport';
+import { markupCards } from './api_sport';
 
-// const paginContainer = document.getElementById('tui-pagination-container');
-// const cardsListExerc = document.querySelector('.nav-exercise-item');
+const container = document.getElementById('tui-pagination-container');
+const allCards = document.querySelector('.list-all-cards');
 
-// let limit = 12;
-// if(window.innerWidth < 768) {
-//     limit = 9;
-// }
+let limit = 12;
+if (window.innerWidth < 768) {
+  limit = 9;
+}
 
-// export function makePagination(totalPages = 1, page) {
-//    const pagination = new Pagination(paginContainer, {
-//      totalItems: totalPages * limit,
-//      itemsPerPage: limit,
-//      visiblePages: 3,
-//      page: page,
-//    })
+export function setPagination (totalPages = 1, page) {
+    const instance = new Pagination(container, {
+      totalItems: totalPages * limit,
+      itemsPerPage: limit,
+      visiblePages: 3,
+      page: page,
+    });
 
-//    if(!cardsListExerc.dataset.page === "cards") {
-//     pagination.on('afterMove', (e) => {
-//         const currPage = e.page;
-//         const queryValue = cardsListExerc.dataset.query;
-//         const filter = cardsListExerc.dataset.filter;
-//     })
-//    }
-// };
+    if (!allCards === 'cards') {
+      instance.on('afterMove', (event) => {
+        const currentPage = event.page;
+        const queryValue = allCards.dataset.query;
+        const filterValue = allCards.dataset.filter;
+
+        getCardsFromApi(queryValue, filterValue, currentPage);
+      });
+      return;
+    }
+};
+
