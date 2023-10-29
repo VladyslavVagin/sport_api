@@ -100,8 +100,7 @@ async function onClickCard(event) {
   if (!event.target.parentNode.classList.contains('ex-card-item')) {
     return;
   }
-  console.log(event.target.parentNode);
-  currCard = event.target.parentNode;
+  currCard = event.target.closest('.ex-card-item');
   queryValue = currCard.dataset.query;
   filterValue = currCard.dataset.filter;
   console.log(filterValue);
