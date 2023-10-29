@@ -97,10 +97,11 @@ if (window.innerWidth < 768) {
 allCards.addEventListener('click', onClickCard);
 
 async function onClickCard(event) {
-  currCard = event.target.parentNode;
-  if (!currCard.classList.contains('ex-card-item')) {
+  if (!event.target.parentNode.classList.contains('ex-card-item')) {
     return;
   }
+  console.log(event.target.parentNode);
+  currCard = event.target.parentNode;
   queryValue = currCard.dataset.query;
   filterValue = currCard.dataset.filter;
   console.log(filterValue);
