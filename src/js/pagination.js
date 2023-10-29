@@ -11,20 +11,18 @@ if (window.innerWidth < 768) {
   limit = 9;
 }
 
-export function setPagination (totalPages = 1, page) {
+export function setPagination (totalPages, page) {
     const instance = new Pagination(container, {
       totalItems: totalPages * limit,
       itemsPerPage: limit,
       visiblePages: 3,
       page: page,
     });
-
-    if (!allCards === 'cards') {
-      instance.on('afterMove', (event) => {
+    if (allCards === 'cards') {
+        instance.on('afterMove', (event) => {
         const currentPage = event.page;
         const queryValue = allCards.dataset.query;
         const filterValue = allCards.dataset.filter;
-
         getCardsFromApi(queryValue, filterValue, currentPage);
       });
       return;

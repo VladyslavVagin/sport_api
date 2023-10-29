@@ -10,6 +10,7 @@ const chooseBtns = document.querySelectorAll('.nav-exercise-btn');
 const inputData = document.querySelector('.form-search-input');
 const titleExercise = document.querySelector('.exercises-title');
 const paginations = document.querySelector('.tui-pagination');
+const input = document.querySelector('.search-input');
 
 // let defaults values
 let cardsMarkup = '';
@@ -30,7 +31,6 @@ function onClickChoose(e) {
   const activeBtn = document.querySelector('.current');
   const currBtn = e.currentTarget;
 
-  // @ts-ignore
   activeBtn.classList.remove('current');
   currBtn.classList.add('current');
 
@@ -45,7 +45,6 @@ export async function getCardsFromApi(query, limit, page = 1) {
     const data = await response.data;
     return data;
   } catch (error) {
-    console.log(error);
     Notify.failure('ERROR !!!');
   }
 }
@@ -54,7 +53,7 @@ export async function markupCards(query, page = 1) {
   allCards.dataset.page = 'cards';
   paginations.style.display = 'none';
 
-  filterText = query.split('_').join(' ');
+  filterText = query.split('%20').join(' ');
   cardsMarkup = '';
 
   const { results: cards, totalPages } = await getCardsFromApi(
@@ -82,7 +81,7 @@ export async function markupCards(query, page = 1) {
   // @ts-ignore
   allCards.innerHTML = cardsMarkup;
 }
-markupCards('Body parts');
+markupCards('Body%20parts');
 // ====================================================================================
 // ====================================================================================
 let queryValue;
@@ -95,6 +94,7 @@ if (window.innerWidth < 768) {
 }
 
 allCards.addEventListener('click', onClickCard);
+inputData.addEventListener('submit', searchExercises);
 
 async function onClickCard(event) {
   if (!event.target.parentNode.classList.contains('ex-card-item')) {
@@ -103,7 +103,6 @@ async function onClickCard(event) {
   const currCard = event.target.closest('.ex-card-item');
   queryValue = currCard.dataset.query;
   filterValue = currCard.dataset.filter;
-  console.log(filterValue);
   try {
     genereateCards(queryValue, filterValue);
   } catch (error) {
@@ -138,6 +137,7 @@ async function fetchCards(part, category, page) {
     const response = await axios.get(
       `https://your-energy.b.goit.study/api/exercises?${part.toLowerCase()}=${category}&page=${page}&limit=${limitCards}`
     );
+    console.log(response);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -154,3 +154,45 @@ function pushOnModal () {
     })
    })
 };
+
+function showErrorNotification() {
+     Notify.failure('Nothing was found for your request', {
+      position: 'right-top',
+      timeout: 3000,
+      fontSize: '18px',
+      borderRadius: '40px',
+    });
+  }
+//======================================== SEARCH FUNCTIONS ================================
+  async function fetchSearch(inputWord) {
+    try {
+      if (inputWord.trim() === '') {
+        return;
+      }
+      const response = await axios.get(
+        `https://your-energy.b.goit.study/api/exercises?${filterValue.toLowerCase()}=${queryValue}&keyword=${inputWord}&page=${currentPage}&limit=${limitCards}`
+      );
+      return response.data;
+    } catch (error) {}
+  }
+  
+  async function searchExercises(e) {
+    e.preventDefault();
+    try {
+      const keyword = e.currentTarget.elements.filter.value;
+      if (filterValue === 'Body parts') {
+        filterValue = 'bodypart';
+      }
+      const data = await fetchSearch(keyword);
+      paginations.style.display = 'none';
+      input.value = '';
+      if (data.results.length === 0) {
+        throw new Error();
+      }
+      allCards.innerHTML = createMarkupCards(data.results);
+      pushStartOnModal();
+    } catch (error) {
+      showErrorNotification();
+    }
+  }
+  

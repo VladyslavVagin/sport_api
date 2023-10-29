@@ -612,14 +612,14 @@ img {
 .text-card {
   color: rgba(36, 36, 36, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
   line-height: 1.5;
 }
 .value-card {
   color: var(--color-black);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 400;
   line-height: 1.5;
   text-transform: capitalize;
@@ -627,7 +627,7 @@ img {
 .third-part {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 6px;
 }
 .exercise-section-title-span {
   text-transform: capitalize;
