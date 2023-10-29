@@ -38,6 +38,7 @@ function onClickChoose(e) {
   markupCards(query);
 }
 
+// FUNCTION THAT RETURN DATA CARDS 
 export async function getCardsFromApi(query, limit, page = 1) {
   try {
     const request = `https://your-energy.b.goit.study/api/filters?filter=${query}&page=${page}&limit=${limit}`;
@@ -45,6 +46,7 @@ export async function getCardsFromApi(query, limit, page = 1) {
     const data = await response.data;
     return data;
   } catch (error) {
+    console.log(error);
     Notify.failure('ERROR !!!');
   }
 }
@@ -78,7 +80,6 @@ export async function markupCards(query, page = 1) {
             </li>`)
   );
 
-  // @ts-ignore
   allCards.innerHTML = cardsMarkup;
 }
 markupCards('Body%20parts');
@@ -103,6 +104,9 @@ async function onClickCard(event) {
   const currCard = event.target.closest('.ex-card-item');
   queryValue = currCard.dataset.query;
   filterValue = currCard.dataset.filter;
+
+  allCards.dataset.query = queryValue;
+  allCards.dataset.filter = filterValue;
   try {
     genereateCards(queryValue, filterValue);
   } catch (error) {
@@ -110,7 +114,7 @@ async function onClickCard(event) {
   }
 }
 
-async function genereateCards(queryValue, filterValue, page = 1) {
+export async function genereateCards(queryValue, filterValue, page = 1) {
   paginations.style.display = 'none';
   allCards.dataset.page = 'exercises';
 
@@ -119,16 +123,14 @@ async function genereateCards(queryValue, filterValue, page = 1) {
   }
 
   const data = await fetchCards(filterValue, queryValue, page);
-  const { totalPages } = data;
+  const {totalPages } = data;
   currentPage = page;
   setPagination(totalPages, page);
-
-  if (totalPages > 1) {
+  if (!(totalPages === 1)) {
     paginations.style.display = 'flex';
   }
   inputData.style.display = 'block';
   titleExercise.innerHTML =  `Exercises /<span class="exercise-section-title-span">${queryValue}</span>`;
-
   allCards.innerHTML = createCards(data.results);
 }
 
