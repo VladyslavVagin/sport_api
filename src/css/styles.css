@@ -640,3 +640,14 @@ img {
 .exercise-section-title-span {
   text-transform: capitalize;
 }
+/* ======================================================================================= */
+/* ===================== CARD DETAILS CSS ================================================ */
+.ex-details-backdrop {
+  background-color: var(--color-black);
+  max-width: 335px;
+}
+
+.ex-details-close {
+  background-color: inherit;
+  border: none;
+}
