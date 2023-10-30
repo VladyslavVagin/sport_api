@@ -649,12 +649,13 @@ img {
 .ex-details-backdrop {
   position: fixed;
   z-index: 14;
-  background: rgba(4, 4, 4, 0.40);
+  background: rgba(4, 4, 4, 0.4);
   min-width: 100vw;
   min-height: 100vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow-y: scroll;
 }
 
 .ex-details-modal {
@@ -745,4 +746,45 @@ img {
   align-items: center;
   column-gap: 6px;
   justify-content: center;
+}
+.main-modal-img {
+  border-radius: 12px;
+}
+
+.modal-header {
+  color: var(--color-white);
+  text-transform: capitalize;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.info-item, 
+.rating__value {
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
+.form-item-rating {
+  width: 100%;
+  border-bottom: 1px solid rgba(244, 244, 244, 0.20);
+  padding-bottom: 20px;
+}
+.info-item {
+  color: var(--color-text-card);
+}
+.character {
+  color: var(--color-white);
+  font-weight: 500;
+  line-height: 1.28;
+  text-transform: capitalize;
 }

@@ -1,20 +1,17 @@
 // @ts-nocheck
 const closeCardBtn = document.querySelector('.ex-details-close');
 const addToFavorites = document.querySelector('.add-favorites-btn');
-const deleteFromFavorites = document.querySelector(
-  '.remove-from-favorites-btn'
-);
+const deleteBtn = document.querySelector('.remove-from-favorites-btn');
 const ratingButton = document.querySelector('.give-rating-btn');
 const cardDetailModal = document.querySelector('.card-details');
 const cardDetailBackdrop = document.querySelector('.ex-details-backdrop');
 const cardContainer = document.querySelector('.ex-details-modal');
 // ==============================================================================================================
 const LS_KEY = 'exerciseCard';
-let savedModal;
 let parsedModal = [];
 let cardLS = {};
 
-function makeDetailsCard(id) {
+export function makeDetailsCard(id) {
   cardDetailBackdrop.classList.remove('is-hidden');
   return fetch(`https://your-energy.b.goit.study/api/exercises/${id}`).then(
     response => response.json()
@@ -53,7 +50,7 @@ function createDataLocalStorage(data) {
 }
 // =======================================================================================================
 // FUNCTION FOR RENDERING CARD
-function renderCard(data) {
+export function renderCard(data) {
   cardDetailBackdrop.style.display = '';
   const cardDetailed = createDetailMarkup(data);
   cardDetailModal.innerHTML = cardDetailed;
@@ -72,7 +69,7 @@ function createDetailMarkup(data) {
   for (let card of dataFromLocalStorage) {
     if (card.id === data._id) {
       isCard = true;
-      // createDelete();
+      createDeleteButton();
       break;
     }
   }
@@ -113,10 +110,10 @@ function createDetailMarkup(data) {
                           Equipment<span class="character">${data.equipment}</span>
                       </p>
                       <p class="info-item">
-                          Popular<span class="character"> ${data.popularity}</span>
+                          Popular<span class="character">${data.popularity}</span>
                       </p>
                       <p class="info-item">
-                          Burned calories<span class="character"> ${data.burnedCalories}</span>
+                          Burned calories<span class="character">${data.burnedCalories}</span>
                       </p>
                   </div>
                   <p class="text-info">${data.description}</p>
@@ -155,11 +152,35 @@ function createRating() {
 function addCardToFavorites(e) {
   e.preventDefaults();
   sendToLs();
-  // createDelete();
+  createDeleteButton();
 }
 
 function sendToLs() {
-    parsedModal = JSON.parse(localStorage.getItem(LS_KEY)) ?? [];
-    parsedModal.push(cardLS);
-    localStorage.setItem(LS_KEY, JSON.stringify(parsedModal));
-};
+  parsedModal = JSON.parse(localStorage.getItem(LS_KEY)) ?? [];
+  parsedModal.push(cardLS);
+  localStorage.setItem(LS_KEY, JSON.stringify(parsedModal));
+}
+// ============================================================================================================
+// FUNCTION FOR DELETE CARD FROM LOCAL STORAGE
+function deleteFromFavorites(e) {
+  parsedModal = JSON.parse(localStorage.getItem('LS_KEY'));
+  const idCardFav = e.target.closest('.ex-details-modal').dataset.id;
+
+  const newParse = parsedModal.filter(item => item.id !== idCardFav);
+  localStorage.setItem('exerciseCard', JSON.stringify(newParse));
+  createAddButton();
+}
+
+function createAddButton() {
+  addToFavorites.addEventListener('click', addCardToFavorites);
+  addToFavorites.classList.remove('visually-hidden');
+  deleteBtn.classList.add('visually-hidden');
+  deleteBtn.removeEventListener('click', deleteFromFavorites);
+}
+
+function createDeleteButton() {
+  addToFavorites.removeEventListener('click', addCardToFavorites);
+  addToFavorites.classList.add('visually-hidden');
+  deleteBtn.classList.remove('visually-hidden');
+  deleteBtn.classList.addEventListener('click', deleteFromFavorites);
+}
