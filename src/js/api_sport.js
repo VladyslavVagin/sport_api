@@ -107,6 +107,7 @@ async function onClickCard(event) {
 
   allCards.dataset.query = queryValue;
   allCards.dataset.filter = filterValue;
+
   try {
     genereateCards(queryValue, filterValue);
   } catch (error) {
@@ -123,14 +124,19 @@ export async function genereateCards(queryValue, filterValue, page = 1) {
   }
 
   const data = await fetchCards(filterValue, queryValue, page);
-  const {totalPages } = data;
+
+  const { totalPages } = data;
   currentPage = page;
+
   setPagination(totalPages, page);
+
   if (!(totalPages === 1)) {
     paginations.style.display = 'flex';
   }
   inputData.style.display = 'block';
+
   titleExercise.innerHTML =  `Exercises /<span class="exercise-section-title-span">${queryValue}</span>`;
+
   allCards.innerHTML = createCards(data.results);
 }
 
@@ -148,14 +154,14 @@ async function fetchCards(part, category, page) {
 
 // =====================================================
 // ====================================================
-function pushOnModal () {
-   const nextBtns = document.querySelectorAll('.start-btn');
-   nextBtns.forEach(btn => {
-    btn.addEventListener('click', (ev) => {
-      idValue = btn.dataset.id;
-    })
-   })
-};
+// function pushOnModal () {
+//    const nextBtns = document.querySelectorAll('.start-btn');
+//    nextBtns.forEach(btn => {
+//     btn.addEventListener('click', (ev) => {
+//       idValue = btn.dataset.id;
+//     })
+//    })
+// };
 
 function showErrorNotification() {
      Notify.failure('Nothing was found for your request', {
