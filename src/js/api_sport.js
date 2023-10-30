@@ -197,8 +197,8 @@ function showErrorNotification() {
       if (data.results.length === 0) {
         throw new Error();
       }
-      allCards.innerHTML = createMarkupCards(data.results);
-      pushStartOnModal();
+      allCards.innerHTML = createCards(data.results);
+      
     } catch (error) {
       showErrorNotification();
     }

@@ -26,7 +26,8 @@ export function setPagination (totalPages = 1, page) {
         const currentPage = event.page;
         const queryValue = allCards.dataset.query;
         const filterValue = allCards.dataset.filter;
-       genereateCards(queryValue, filterValue, currentPage);
+
+        genereateCards(queryValue, filterValue, currentPage);
       });
       return;
     }
