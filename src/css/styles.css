@@ -602,6 +602,7 @@ img {
   display: flex;
   align-items: center;
   column-gap: 8px;
+  color: var(--color-black);
 }
 .second-part {
   display: flex;
