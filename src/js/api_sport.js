@@ -3,6 +3,9 @@ import axios from 'axios';
 import { Notify } from 'notiflix';
 import { createCards } from './markup';
 import { setPagination } from './pagination';
+import { renderCard } from './detail-card';
+import { makeDetailsCard } from './detail-card';
+
 
 // MALE ALL CONSTANT
 const allCards = document.querySelector('.list-all-cards');
@@ -36,6 +39,8 @@ function onClickChoose(e) {
 
   const query = currBtn.dataset.filter;
   markupCards(query);
+
+  pushStartOnModal();
 }
 
 // FUNCTION THAT RETURN DATA CARDS 
@@ -138,6 +143,7 @@ export async function genereateCards(queryValue, filterValue, page = 1) {
   titleExercise.innerHTML =  `Exercises /<span class="exercise-section-title-span">${queryValue}</span>`;
 
   allCards.innerHTML = createCards(data.results);
+  pushStartOnModal();
 }
 
 async function fetchCards(part, category, page) {
@@ -145,7 +151,6 @@ async function fetchCards(part, category, page) {
     const response = await axios.get(
       `https://your-energy.b.goit.study/api/exercises?${part.toLowerCase()}=${category}&page=${page}&limit=${limitCards}`
     );
-    console.log(response);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -154,14 +159,6 @@ async function fetchCards(part, category, page) {
 
 // =====================================================
 // ====================================================
-// function pushOnModal () {
-//    const nextBtns = document.querySelectorAll('.start-btn');
-//    nextBtns.forEach(btn => {
-//     btn.addEventListener('click', (ev) => {
-//       idValue = btn.dataset.id;
-//     })
-//    })
-// };
 
 function showErrorNotification() {
      Notify.failure('Nothing was found for your request', {
@@ -199,9 +196,20 @@ function showErrorNotification() {
         throw new Error();
       }
       allCards.innerHTML = createCards(data.results);
-      
+      pushStartOnModal();
     } catch (error) {
       showErrorNotification();
     }
   }
-  
+  function pushStartOnModal () {
+    const nextBtns = document.querySelectorAll('.start-btn');
+    console.log(nextBtns);
+    nextBtns.forEach(btn => {
+     console.log(btn);
+     btn.addEventListener('click', (e) => {
+       idValue = btn.dataset.id;
+       makeDetailsCard(idValue).then(renderCard).catch(error => console.log(error));
+     })
+    })
+ };
+
