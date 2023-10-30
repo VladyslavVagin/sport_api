@@ -54,6 +54,7 @@ export function renderCard(data) {
   cardDetailBackdrop.style.display = '';
   const cardDetailed = createDetailMarkup(data);
   cardDetailModal.innerHTML = cardDetailed;
+  createRating();
   createDataLocalStorage(data);
 }
 
