@@ -532,7 +532,10 @@ img {
 }
 /* ======================================================================================================= */
 /* ============================================================================================================ */
-.tui-first, .tui-prev, .tui-next, .tui-last {
+.tui-first,
+.tui-prev,
+.tui-next,
+.tui-last {
   display: none;
 }
 
@@ -643,11 +646,102 @@ img {
 /* ======================================================================================= */
 /* ===================== CARD DETAILS CSS ================================================ */
 .ex-details-backdrop {
-  background-color: var(--color-black);
+  position: fixed;
+  z-index: 14;
+  background: rgba(4, 4, 4, 0.40);
+  min-width: 100vw;
+  min-height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ex-details-modal {
   max-width: 335px;
+  background-color: var(--color-black);
+  border-radius: 20px;
+  padding: 14px 20px 40px 20px;
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .ex-details-close {
   background-color: inherit;
   border: none;
+  transition: all 600ms ease-in-out;
+  margin-right: -14px;
+}
+.ex-details-close:hover,
+.ex-details-close:focus {
+  transform: scale(1.2);
+}
+
+.trash-icon,
+.heart-icon {
+  fill: var(--color-white);
+  stroke: var(--color-black);
+  transition: all 600ms ease-in-out;
+}
+.remove-from-favorites-btn,
+.add-favorites-btn {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+  border-radius: 30px;
+  border: 1px solid var(--color-white);
+  transition: all 600ms ease-in-out;
+  height: 42px;
+  width: 167px;
+}
+.remove-from-favorites-btn:hover,
+.remove-from-favorites-btn:focus,
+.add-favorites-btn:hover,
+.add-favorites-btn:focus {
+  background-color: var(--color-black);
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.add-favorites-btn:focus .heart-icon,
+.add-favorites-btn:hover .heart-icon,
+.remove-from-favorites-btn:focus .trash-icon,
+.remove-from-favorites-btn:hover .trash-icon {
+  fill: var(--color-black);
+  stroke: var(--color-white);
+}
+.close-ex-details-card-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.give-rating-btn {
+  background-color: inherit;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  transition: all 600ms ease-in-out;
+  height: 42px;
+  width: 122px;
+}
+.give-rating-btn:hover,
+.give-rating-btn:focus {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
+.ex-details-buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  justify-content: center;
 }
