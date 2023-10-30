@@ -203,9 +203,7 @@ function showErrorNotification() {
   }
   function pushStartOnModal () {
     const nextBtns = document.querySelectorAll('.start-btn');
-    console.log(nextBtns);
     nextBtns.forEach(btn => {
-     console.log(btn);
      btn.addEventListener('click', (e) => {
        idValue = btn.dataset.id;
        makeDetailsCard(idValue).then(renderCard).catch(error => console.log(error));
