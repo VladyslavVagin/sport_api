@@ -194,6 +194,7 @@ function showErrorNotification() {
       const data = await fetchSearch(keyword);
       paginations.style.display = 'none';
       input.value = '';
+      
       if (data.results.length === 0) {
         throw new Error();
       }
