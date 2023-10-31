@@ -25,7 +25,7 @@ export function createCards(arr) {
           <div class="second-part">
             <svg class="run-man-icon" width="24" height="24">
               <use href="${icons}#icon-run"></use>
-            </svg>
+            </svg>&nbsp;
             <p class="exercise-name">${name}</p>
           </div>
           <div class="third-part">

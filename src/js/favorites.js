@@ -1,4 +1,5 @@
 import './burger-menu'
 import './rating'
 import './quote'
+import './create-cards-favorites'
 import './details-cards-favorites'

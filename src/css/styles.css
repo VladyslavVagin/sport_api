@@ -619,9 +619,14 @@ img {
 .second-part {
   display: flex;
   align-items: center;
-  column-gap: 16px;
+  column-gap: 4px;
   margin-bottom: 18px;
 }
+.run-man-icon {
+  min-width: 24px;
+  min-height: 24px;
+}
+
 .exercise-name {
   text-transform: capitalize;
   font-feature-settings: 'clig' off, 'liga' off;
@@ -1193,4 +1198,50 @@ img {
   .rating-form {
     margin-top: 150px;
   }
+}
+/* ============================================================================================== */
+/* =============================== FAVORITES CARDS ============================================= */
+.list-fav {
+  margin-top: 40px;
+}
+.exercise-item {
+  background-color: var(--color-megawhite);
+  padding: 20px;
+  border-radius: 15px;
+}
+.upper-part {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+.trash_btn {
+  background-color: inherit;
+}
+.exercise-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 27px;
+}
+.name-exercise-container {
+  display: flex;
+  margin-bottom: 18px;
+  column-gap: 4px;
+}
+.run-favo {
+min-width: 24px;
+min-height: 24px;
+}
+
+.discription {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+.text-card-favor {
+ display: flex;
 }

@@ -77,7 +77,7 @@ function createDetailMarkup(data) {
     }
   }
 
-  //   createAddButton();
+    createAddButton();
   cardContainer.setAttribute('data-id', `${data._id}`);
   let ratingStars = data.rating.toFixed(1);
   return `      
@@ -154,12 +154,14 @@ function createRating() {
 //   function that add datas to localstorage
 function addCardToFavorites(e) {
   e.preventDefault();
+  console.log(e);
   sendToLs();
   createDeleteButton();
 }
 
 function sendToLs() {
   parsedModal = JSON.parse(localStorage.getItem(LS_KEY)) ?? [];
+  console.log(parsedModal);
   parsedModal.push(cardLS);
   localStorage.setItem(LS_KEY, JSON.stringify(parsedModal));
 }
@@ -185,7 +187,7 @@ function createDeleteButton() {
   addToFavorites.removeEventListener('click', addCardToFavorites);
   addToFavorites.classList.add('visually-hidden');
   deleteBtn.classList.remove('visually-hidden');
-  deleteBtn.classList.addEventListener('click', deleteFromFavorites);
+  deleteBtn.addEventListener('click', deleteFromFavorites);
 }
 
 ratingButton.addEventListener('click', onRatingClick);
