@@ -25,15 +25,15 @@ function onCloseModal() {
     backdrop.addEventListener('click', whenCloseModal);
 };
 // ====================================================================================================
-function onClickStart(cardDelete, dataIdent) {
+export function onClickStart(cardDelete, dataIdent) {
     closeButton.addEventListener('click', onCloseModal);
     window.addEventListener('keydown', whenCloseModal);
     backdrop.addEventListener('click', whenCloseModal);
     cardToRemove = cardDelete;
     backdrop.classList.remove('is-hidden');
-    // renderCardToFavorires(dataIdent);
+    renderCardToFavorires(dataIdent);
     modalWindow.innerHTML = cardUn;
-    // createRating();
+    createRating();
 };
 
 function renderCardToFavorires(dataIdent) {
