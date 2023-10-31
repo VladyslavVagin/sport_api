@@ -171,7 +171,7 @@ function sendToLs() {
 // ============================================================================================================
 // FUNCTION FOR DELETE CARD FROM LOCAL STORAGE
 function deleteFromFavorites(e) {
-  parsedModal = JSON.parse(localStorage.getItem('LS_KEY'));
+  parsedModal = JSON.parse(localStorage.getItem(LS_KEY));
   const idCardFav = e.target.closest('.ex-details-modal').dataset.id;
 
   const newParse = parsedModal.filter(item => item.id !== idCardFav);
