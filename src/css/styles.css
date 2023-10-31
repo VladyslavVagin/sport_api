@@ -101,6 +101,13 @@ img {
   width: 100%;
   max-width: 375px;
 }
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
 /* =================================== MOBILE ========================================================= */
 /* ================================= HEADER =========================================================== */
 .header-content {
@@ -120,6 +127,68 @@ img {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 767.98px) {
+  .header-nav-menu,
+  .header-social-media {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+  }
+}
+.header-menu-list {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 8px 36px;
+  border-radius: 60px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.active-btn {
+  padding: 6px 12px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-radius: 30px;
+}
+.social-list {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.social-icon {
+  fill: var(--color-black);
+  opacity: 0.8;
+  transition: all 600ms ease-in-out;
+ }
+ .social-item {
+   background-color: inherit;
+   padding: 4px 4px 0px 4px;
+   border: 1px solid rgba(36, 36, 36, 0.10);
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 600ms ease-in-out;
+ }
+  .social-item:hover, .social-item:focus {
+    background-color: var(--color-black);
+    opacity: 0.8;
+  }
+  .social-item:focus .social-icon, .social-item:hover .social-icon {
+    fill: var(--color-white);
+  }
+
 /* ===================================================================================================== */
 /* ==================================== HERO =============================================================== */
 .hero {
@@ -161,6 +230,32 @@ img {
 .tags-list {
   display: flex;
   column-gap: 6px;
+}
+
+@media screen and (min-width: 768px) {
+  .burger-btn-container,
+  .burger-backdrop {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+  }
+  .hero {
+    padding-top: 76px;
+    padding-bottom: 40px;
+  }
+  .hero-title {
+    font-size: 74px;
+    line-height: 1;
+    letter-spacing: -1.48px;
+    max-width: 593px;
+  }
 }
 /* ================================================================================= */
 /*====================================== BURGER MENU ========================== */
@@ -223,6 +318,7 @@ img {
   justify-content: center;
 }
 /* ============================================================================= */
+
 /* ==================== EXERCISES ========================================================= */
 .exercises-title {
   font-family: Neue Montreal;
