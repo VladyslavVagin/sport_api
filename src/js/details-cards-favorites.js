@@ -5,8 +5,8 @@ const closeButton = document.querySelector('.ex-details-close');
 const removeFromFav = document.querySelector('.remove-from-favorites-btn');
 const buttonRating = document.querySelector('.give-rating-btn');
 const modalWindow = document.querySelector('.card-details-f');
-const backdrop = document.querySelector('.backdrop');
-const cardModal = document.querySelector('.modal');
+const backdrop = document.querySelector('.ex-details-backdrop');
+const cardModal = document.querySelector('.ex-details-modal');
 
 let cardUn;
 let cardToRemove = null;
