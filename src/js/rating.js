@@ -11,6 +11,8 @@ const ratingModalWindow = document.querySelector('.backdrop-rating');
 const ratingForm = document.querySelector('.rating-form');
 const ratingItem = document.querySelectorAll('.rating__item-f');
 // ============================================================================================================
+let ratingActive;
+let ratingValue;
 
 btnCloseRating.addEventListener('click', onCloseRating);
 
