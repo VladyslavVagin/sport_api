@@ -272,12 +272,12 @@ img {
 }
 .current::after {
   content: '';
-  width: 90%;
+  width: 86%;
   background-color: var(--color-black);
   height: 4px;
   position: absolute;
   bottom: -8px;
-  left: 5%;
+  left: 6%;
   border-radius: 2px;
 }
 /* ================== CARDS EXERCISES ======================================== */
@@ -556,7 +556,11 @@ img {
 }
 .tui-is-selected {
   color: var(--color-black);
-  padding: 6px 12px;
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--color-black);
   border-radius: 80px;
 }
@@ -596,6 +600,8 @@ img {
 }
 .start-btn-icon {
   stroke: var(--color-black);
+  transition: all 600ms ease-in-out;
+  
 }
 .start-btn {
   background-color: inherit;
@@ -603,7 +609,9 @@ img {
   align-items: center;
   column-gap: 8px;
   color: var(--color-black);
+  transition: all 600ms ease-in-out;
 }
+
 .second-part {
   display: flex;
   align-items: center;
