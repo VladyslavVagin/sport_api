@@ -1,0 +1,1 @@
+{"mappings":"oeAAAA,EAAA,S","sources":["src/js/favorites.js"],"sourcesContent":["import './burger-menu'\nimport './rating'\nimport './quote'\nimport './details-cards-favorites'"],"names":["parcelRequire"],"version":3,"file":"favorites.10871142.js.map"}
