@@ -15,7 +15,7 @@ const ratingItem = document.querySelectorAll('.rating__item-f');
 btnCloseRating.addEventListener('click', onCloseRating);
 
 function onCloseRating(e) {
-    e.preventDefaults();
+    e.preventDefault();
     ratingModalWindow.style.display = 'none';
 };
  
@@ -87,16 +87,16 @@ ratingForm.message.addEventListener('input', e => msg = e.currentTarget.value);
 async function addRating(e) {
     e.preventDefault();
     try {
-      for (let rate of refs.ratingItem) {
+      for (let rate of ratingItem) {
         if (rate.checked) {
           rating = rate.value;
         }
       }
-      id = refs.ratingForm.dataset.id;
+      id = ratingForm.dataset.id;
       const data = await patchRating(id, rating, email, msg);
   
       console.log(data);
-      onCloseBtnRating(e);
+      onCloseRating(e);
       makeDetailsCard(id).then(renderCard).catch(error => console.log(error));
     } catch (error) {
         if (error.response && error.response.data) {
@@ -119,7 +119,7 @@ async function addRating(e) {
       }
       
       function showErrorNotification(text) {
-        Notiflix.Notify.failure(text, {
+        Notify.failure(text, {
           position: 'right-top',
           timeout: 3000,
           fontSize: '18px',

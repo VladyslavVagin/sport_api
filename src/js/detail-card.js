@@ -1,4 +1,6 @@
 // @ts-nocheck
+import { openRatingModal } from "./rating";
+
 const closeCardBtn = document.querySelector('.ex-details-close');
 const addToFavorites = document.querySelector('.add-favorites-btn');
 const deleteBtn = document.querySelector('.remove-from-favorites-btn');
@@ -151,7 +153,7 @@ function createRating() {
 
 //   function that add datas to localstorage
 function addCardToFavorites(e) {
-  e.preventDefaults();
+  e.preventDefault();
   sendToLs();
   createDeleteButton();
 }
@@ -185,3 +187,12 @@ function createDeleteButton() {
   deleteBtn.classList.remove('visually-hidden');
   deleteBtn.classList.addEventListener('click', deleteFromFavorites);
 }
+
+ratingButton.addEventListener('click', onRatingClick);
+
+function onRatingClick(e) {
+  e.preventDefault();
+  const dataRatingCard = e.target.closest('.ex-details-modal').dataset.id;
+  openRatingModal(dataRatingCard);
+  onCloseCard();
+};
