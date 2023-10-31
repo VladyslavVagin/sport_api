@@ -55,6 +55,7 @@
               blessed in that way are the most competitive and have the biggest
               heart.
             </p>
+            <p class="author">Tom Brady</p>
           </div>
           <svg class="inverted-icon" width="20" height="20">
             <use href="./images/icons.svg#icon-inverted"></use>
@@ -93,6 +94,8 @@
           To get started, you can add exercises that you like to your favorites
           for easier access in the future.
         </p>
+        <!-- EXERCISES CONTAINER  -->
+        <ul class="list-all-cards"></ul>
       </div>
     </section>
     <!-- ==================================== BURGER MENU ============================================ -->
@@ -138,6 +141,103 @@
         </ul>
       </div>
     </div>
+    <!-- =============================== EXERCISE DETAILS CARD ============================================== -->
+    <div class="ex-details-backdrop is-hidden">
+      <div class="ex-details-modal">
+        <div class="close-ex-details-card-container">
+          <button type="button" class="ex-details-close">
+            <svg class="ex-details-close-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="card-details"></div>
+        <div class="ex-details-buttons">
+          <button
+            class="remove-from-favorites-btn visually-hidden"
+            type="button"
+          >
+            Remove from favorites
+            <svg class="trash-icon" width="20" height="20">
+              <use href="./images/icons.svg#icon-trash"></use>
+            </svg>
+          </button>
+          <button class="give-rating-btn" type="button">Give a rating</button>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================================================================ -->
+    <!-- =============================== GIVING RATING FORM ======================================================== -->
+    <div class="backdrop-rating" style="display: none">
+      <form action="" class="rating-form">
+        <button type="button" class="button-close-f">
+          <svg class="close-icon" width="24" height="24">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <label for="rating-star-radio">
+          <p class="text-rating-star">Rating</p>
+          <div class="form-item-rating-f">
+            <div class="rating-f rating-set">
+              <div class="rating__value-f">0.0</div>
+              <div class="rating__body-f">
+                <div class="rating__active-f"></div>
+                <div class="rating__items-f">
+                  <input
+                    type="radio"
+                    class="rating__item-f"
+                    value="1"
+                    name="rating"
+                  />
+                  <input
+                    type="radio"
+                    class="rating__item-f"
+                    value="2"
+                    name="rating"
+                  />
+                  <input
+                    type="radio"
+                    class="rating__item-f"
+                    value="3"
+                    name="rating"
+                  />
+                  <input
+                    type="radio"
+                    class="rating__item-f"
+                    value="4"
+                    name="rating"
+                  />
+                  <input
+                    type="radio"
+                    class="rating__item-f"
+                    value="5"
+                    name="rating"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </label>
+        <input
+          class="email-rating-form"
+          type="email"
+          name="email"
+          autofocus
+          placeholder="Email"
+          required
+        />
+        <textarea
+          class="textarea-rating-form"
+          name="message"
+          rows="8"
+          placeholder="Your comment"
+          required
+        ></textarea>
+
+        <button class="button-rating-form" type="submit">Send</button>
+      </form>
+    </div>
+    <!-- ==================================================================================================== -->
     <!-- ==================================================================================================== -->
     <script src="./js/favorites.js" type="module"></script>
   </body>
