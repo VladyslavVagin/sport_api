@@ -1,5 +1,6 @@
 // @ts-nocheck
 import icons from '../images/icons.svg';
+import { onClickStart } from './details-cards-favorites';
 
 const qURL = 'https://your-energy.b.goit.study/api/quote';
 const textDefault = document.querySelector('.text-no-favorites');
@@ -9,16 +10,16 @@ let favoriteCard;
 createMarkupFav();
 function createMarkupFav() {
     const cards = document.querySelector('.list-all-cards');
-    const saveData = JSON.parse(localStorage.getItem('exerciseCard'));
+    const storedDatas = localStorage.getItem('exerciseCard');
+    const saveData = JSON.parse(storedDatas);
+    console.log(saveData);
 
     if(saveData.length === 0) {
         cards.innerHTML = '';
     textDefault.style.display = 'block';
     } else {
         textDefault.style.display = 'none';
-    }
-
-    saveData.forEach(item => {
+         saveData.forEach(item => {
         const { id, name, target, bodyPart, burnedCalories } = item;
         favoriteCard = document.createElement('li');
         favoriteCard.className = 'exercise-item';
@@ -50,6 +51,6 @@ function createMarkupFav() {
         <li class="text-card text-card-favor">Target: <p class="value-card">${target}</p>
         </li>
       </ul>`;
-    })
-    cards.appendChild(favoriteCard);
+      cards.appendChild(favoriteCard);
+    })}
 };

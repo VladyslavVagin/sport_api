@@ -76,8 +76,12 @@ function createDetailMarkup(data) {
       break;
     }
   }
+  createAddButton();
+   if(isCard) {
+createDeleteButton();
+   }
 
-    createAddButton();
+ 
   cardContainer.setAttribute('data-id', `${data._id}`);
   let ratingStars = data.rating.toFixed(1);
   return `      
@@ -161,7 +165,6 @@ function addCardToFavorites(e) {
 
 function sendToLs() {
   parsedModal = JSON.parse(localStorage.getItem(LS_KEY)) ?? [];
-  console.log(parsedModal);
   parsedModal.push(cardLS);
   localStorage.setItem(LS_KEY, JSON.stringify(parsedModal));
 }
