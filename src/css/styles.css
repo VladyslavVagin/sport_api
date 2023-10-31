@@ -757,6 +757,8 @@ img {
 }
 .main-modal-img {
   border-radius: 12px;
+  height: 258px;
+  width: 100%;
 }
 
 .modal-header {
