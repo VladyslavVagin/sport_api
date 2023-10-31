@@ -6,7 +6,6 @@ import { renderCard } from './detail-card';
 // ===========================================================================================================
 
 const btnCloseRating = document.querySelector('.button-close-f');
-const btnSendRating = document.querySelector('.button-rating-form');
 const ratingModalWindow = document.querySelector('.backdrop-rating');
 const ratingForm = document.querySelector('.rating-form');
 const ratingItem = document.querySelectorAll('.rating__item-f');
@@ -32,7 +31,6 @@ if (ratings.length > 0) {
 }
 
 function initRatings() {
-    let ratingActive, ratingValue;
     for (let index = 0; index < ratings.length; index++) {
       const rating = ratings[index];
       initRating(rating);
