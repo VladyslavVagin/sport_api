@@ -1,4 +1,6 @@
 // @ts-nocheck
+import { findDeleteIndex } from "./create-cards-favorites";
+
 const closeButton = document.querySelector('.ex-details-close');
 const removeFromFav = document.querySelector('.remove-from-favorites-btn');
 const buttonRating = document.querySelector('.give-rating-btn');
@@ -143,14 +145,14 @@ function onClickRemove(e) {
         cardToRemove.remove();
     }
     const items = JSON.parse(localStorage.getItem('exerciseCard')) || [];
-    // const indexToDelete = findIndexToDelete(items, cardToRemove);
-    // if (indexToDelete !== -1) {
-    //     items.splice(indexToDelete, 1);
-    //   }
-    //   localStorage.setItem('exerciseCard', JSON.stringify(items));
+    const indexToDelete = findDeleteIndex(items, cardToRemove);
+    if (indexToDelete !== -1) {
+        items.splice(indexToDelete, 1);
+      }
+      localStorage.setItem('exerciseCard', JSON.stringify(items));
   
       if (document.querySelectorAll('.exercises-card').length === 0) {
-        textDefault.style.display = 'block';
+        textDefault.style.display = 'none';
       }
     onCloseModal();
 };

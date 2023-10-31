@@ -605,7 +605,6 @@ img {
 .start-btn-icon {
   stroke: var(--color-black);
   transition: all 600ms ease-in-out;
-  
 }
 .start-btn {
   background-color: inherit;
@@ -781,12 +780,12 @@ img {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.info-item, 
+.info-item,
 .rating__value {
-    color: var(--color-white);
-    font-size: 12px;
-    padding: 0 10px 0 0;
-  }
+  color: var(--color-white);
+  font-size: 12px;
+  padding: 0 10px 0 0;
+}
 
 .rating {
   display: flex;
@@ -795,7 +794,7 @@ img {
 }
 .form-item-rating {
   width: 100%;
-  border-bottom: 1px solid rgba(244, 244, 244, 0.20);
+  border-bottom: 1px solid rgba(244, 244, 244, 0.2);
   padding-bottom: 20px;
 }
 .info-item {
@@ -818,7 +817,7 @@ img {
   flex-wrap: wrap;
   gap: 20px;
   padding: 8px 0px;
-  border-bottom: 1px solid rgba(244, 244, 244, 0.20);
+  border-bottom: 1px solid rgba(244, 244, 244, 0.2);
 }
 .text-info {
   color: var(--color-text-card);
@@ -867,14 +866,14 @@ img {
   height: 100%;
   top: 0;
   left: 0;
-} 
+}
 
 .rating__item {
   flex: 0 0 20%;
   height: 100%;
   opacity: 0;
   font-size: 12px;
-} 
+}
 /* ============================================================================================== */
 .button-close-f {
   position: absolute;
@@ -1106,7 +1105,7 @@ img {
   display: block;
   font-size: 12px;
   color: rgba(244, 244, 244, 0.2);
-  transform: scale(1.060);
+  transform: scale(1.06);
 }
 
 .rating__active-f {
@@ -1229,8 +1228,8 @@ img {
   column-gap: 4px;
 }
 .run-favo {
-min-width: 24px;
-min-height: 24px;
+  min-width: 24px;
+  min-height: 24px;
 }
 
 .discription {
@@ -1243,5 +1242,30 @@ min-height: 24px;
   white-space: nowrap;
 }
 .text-card-favor {
- display: flex;
+  display: flex;
+}
+/* ================================================================================== */
+/*====================== DETAILS CARD FAVORITES ======================================*/
+.backdrop {
+  position: fixed;
+  z-index: 14;
+  background: rgba(4, 4, 4, 0.4);
+  min-width: 100vw;
+  min-height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+}
+
+.modal {
+  max-width: 335px;
+  background-color: var(--color-black);
+  border-radius: 20px;
+  padding: 14px 20px 40px 20px;
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

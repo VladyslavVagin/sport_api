@@ -2,7 +2,6 @@
 import icons from '../images/icons.svg';
 import { onClickStart } from './details-cards-favorites';
 
-const qURL = 'https://your-energy.b.goit.study/api/quote';
 const textDefault = document.querySelector('.text-no-favorites');
 
 let favoriteCard;
@@ -54,3 +53,41 @@ function createMarkupFav() {
       cards.appendChild(favoriteCard);
     })}
 };
+
+const trashButton = document.querySelectorAll('.trash_btn');
+trashButton.forEach(btn => btn.addEventListener('click', onClickTrash));
+
+function onClickTrash(e) {
+    e.preventDefault();
+    const cardForDelete = e.target.closest('li');
+    if(cardForDelete) {
+        cardForDelete.remove();
+
+        const items = JSON.parse(localStorage.getItem('exerciseCard')) || [];
+        const indexCardDeleting = findDeleteIndex(items, cardForDelete);
+
+        if(indexCardDeleting !== -1) {
+            items.splice(indexCardDeleting, 1);
+        }
+        localStorage.setItem('exerciseCard', JSON.stringify(items));
+        if (document.querySelectorAll('.exercise-item').length === 0) {
+            textDefault.style.display = 'block';
+          }
+    }
+};
+
+export function findDeleteIndex(items, cardForDelete) {
+    const indexCardDeleting = items.findIndex(itm => itm.id === cardForDelete.getAttribute('data-id'));
+    return indexCardDeleting;
+};
+
+const startBtn = document.querySelectorAll('.start-btn');
+
+startBtn.forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const dataId = e.target.closest('.exercise-item').dataset.id;
+    const cardRemove = e.target.closest('li');
+    onClickStart(cardRemove, dataId);
+  });
+});
