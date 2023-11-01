@@ -170,24 +170,26 @@ img {
   fill: var(--color-black);
   opacity: 0.8;
   transition: all 600ms ease-in-out;
- }
- .social-item {
-   background-color: inherit;
-   padding: 4px 4px 0px 4px;
-   border: 1px solid rgba(36, 36, 36, 0.10);
-   border-radius: 10px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   transition: all 600ms ease-in-out;
- }
-  .social-item:hover, .social-item:focus {
-    background-color: var(--color-black);
-    opacity: 0.8;
-  }
-  .social-item:focus .social-icon, .social-item:hover .social-icon {
-    fill: var(--color-white);
-  }
+}
+.social-item {
+  background-color: inherit;
+  padding: 4px 4px 0px 4px;
+  border: 1px solid rgba(36, 36, 36, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 600ms ease-in-out;
+}
+.social-item:hover,
+.social-item:focus {
+  background-color: var(--color-black);
+  opacity: 0.8;
+}
+.social-item:focus .social-icon,
+.social-item:hover .social-icon {
+  fill: var(--color-white);
+}
 
 /* ===================================================================================================== */
 /* ==================================== HERO =============================================================== */
@@ -345,7 +347,7 @@ img {
   letter-spacing: -0.035rem;
 }
 .exercises-title span {
-  color: rgba(36, 36, 36, 0.50);
+  color: rgba(36, 36, 36, 0.5);
   font-size: 20px;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -500,6 +502,9 @@ img {
   .ex-card-item {
     width: calc((100% - 30px) / 3);
   }
+  .ex-card-title {
+    font-size: 24px;
+  }
 }
 /* ======================================================================================= */
 /* =========================== QUOTE OF THE DAY ========================================== */
@@ -518,6 +523,7 @@ img {
   column-gap: 18px;
   position: relative;
   margin-bottom: 20px;
+  max-width: 400px;
 }
 .quote-title {
   color: var(--color-white);
@@ -580,6 +586,30 @@ img {
   padding: 20px;
   background-color: var(--color-megawhite);
   border-radius: 20px;
+  max-width: 400px;
+}
+@media screen and (min-width: 768px) {
+  .quote-section {
+    padding-bottom: 100px;
+  }
+  .quote-section .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px 16px;
+  }
+  .wrapper {
+    padding: 40px;
+  }
+  .time,
+  .quote-title {
+    font-size: 24px;
+    line-height: 1.33;
+    font-weight: 500;
+  }
+  .wrapper-quote {
+    padding: 40px;
+  }
 }
 /* =========================================================================================================================== */
 /* =================================================================================================================================== */
@@ -620,7 +650,13 @@ img {
   width: 100%;
   border-radius: 30px;
   border: 1px solid var(--color-white);
+  transition: all 600ms ease-in-out;
 }
+.footer-input:focus-within {
+   border-color: aqua;
+   outline: none;
+}
+
 .footer-subscribe-btn {
   padding: 12px 14px;
   display: flex;
@@ -630,10 +666,18 @@ img {
   border-radius: 30px;
   font-size: 14px;
   font-weight: 400;
+  border: 1px solid var(--color-white);
   line-height: 1.28;
   background-color: var(--color-white);
   color: var(--color-black);
+  transition: all 600ms ease-in-out;
 }
+.footer-subscribe-btn:hover,
+.footer-subscribe-btn:focus {
+  background-color: inherit;
+  color: var(--color-white);
+}
+
 .subscribe-form {
   display: flex;
   flex-direction: column;
@@ -655,6 +699,54 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 64px 32px 32px 32px;
+  }
+  .footer .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 100px 40px;
+  }
+  .otro-part-footer {
+    max-width: 448px;
+  }
+  .footer-title {
+    font-size: 56px;
+    line-height: 1.07;
+    margin-bottom: 32px;
+  }
+  .footer-subscribe-text {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+  .subscribe-form {
+    max-width: 350px;
+  }
+  .footer-input,
+  .footer-subscribe-btn {
+    font-size: 16px;
+  }
+  .footer-second-part {
+    margin: 0;
+  }
+  .footer-text-one {
+    margin: 0px;
+  }
+  .privacy-policy {
+    width: 60%;
+  }
+
+  .footer-second-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    width: 100%;
+  }
 }
 /* ============================================================================================= */
 /* ===================================================================================================== */

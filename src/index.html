@@ -224,6 +224,14 @@
         <div class="quote-image-container">
           <picture>
             <source
+              media="(min-width: 768px)"
+              srcset="
+                ./images/quote/quote-tablet.jpg    1x,
+                ./images/quote/quote-tablet-2x.jpg 2x
+              "
+              type="image/jpg"
+            />
+            <source
               media="(max-width: 767px)"
               srcset="
                 ./images/quote/quote-mob.jpg    1x,
@@ -264,7 +272,6 @@
     <!--=========================================================== FOOTER =======================================================-->
     <footer class="footer">
       <div class="container">
-        <div class="footer-first-part">
           <div class="footer-upper">
             <div class="logo-container">
               <a href="./index.html">
@@ -298,24 +305,25 @@
               </li>
             </ul>
           </div>
-          <h2 class="footer-title">
-            Transforming your <i>body</i> shape with us
-          </h2>
-          <p class="footer-subscribe-text">
-            Subscribe and learn about new exercises!
-          </p>
-          <form class="subscribe-form">
-            <input
-              type="email"
-              placeholder="E-mail"
-              required
-              class="footer-input"
-              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z]+\.[a-zA-Z]{2,4}"
-              name="email"
-            />
-            <button type="submit" class="footer-subscribe-btn">Send</button>
-          </form>
-        </div>
+          <div class="otro-part-footer">
+            <h2 class="footer-title">
+              Transforming your <i>body</i> shape with us
+            </h2>
+            <p class="footer-subscribe-text">
+              Subscribe and learn about new exercises!
+            </p>
+            <form class="subscribe-form">
+              <input
+                type="email"
+                placeholder="E-mail"
+                required
+                class="footer-input"
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z]+\.[a-zA-Z]{2,4}"
+                name="email"
+              />
+              <button type="submit" class="footer-subscribe-btn">Send</button>
+            </form>
+          </div>
         <div class="footer-second-part">
           <p class="footer-text-one">Your Energy. All rights reserved.</p>
           <div class="privacy-policy">
