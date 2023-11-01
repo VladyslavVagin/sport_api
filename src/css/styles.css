@@ -853,17 +853,32 @@ img {
   }
 }
 @media screen and (min-width: 1440px) {
+  .footer-title {
+    font-size: 56px;
+    min-width: 554px;
+    max-width: 554px;
+  }
+  .subscribe-form {
+    min-width: 350px;
+    max-width: 350px;
+  }
+
+  .footer {
+    padding: 64px 0px 36px 0px;
+  }
+  .footer .container {
+   gap: 0px 158px;
+   justify-content: flex-start;
+  }
+
+  .footer-upper {
+    margin-bottom: 0px;
+  }
   .otro-part-footer {
-    max-width: 86%;
     display: flex;
     align-items: flex-start;
     column-gap: 158px;
-  }
-  .footer-title {
-    min-width: 554px;
-  }
-  .footer-subscribe-container {
-    min-width: 540px;
+    margin-bottom: 54px;
   }
 }
 /* ============================================================================================= */
