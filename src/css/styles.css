@@ -429,8 +429,13 @@ img {
     font-size: 16px;
   }
   .search-btn {
-    right: 62%;
+    right: 6%;
     top: 26%;
+  }
+  .upper-exerc-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 /* ================== CARDS EXERCISES ======================================== */
