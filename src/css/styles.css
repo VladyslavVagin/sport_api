@@ -423,6 +423,7 @@ img {
   .form-search-input {
     padding: 0px;
     margin-bottom: 32px;
+    margin-right: 152px;
   }
   .search-input {
     min-width: 271px;
@@ -435,7 +436,6 @@ img {
   .upper-exerc-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 }
 /* ================== CARDS EXERCISES ======================================== */
