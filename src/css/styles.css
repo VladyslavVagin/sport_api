@@ -1009,6 +1009,13 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media screen and (min-width: 768px) {
+  .ex-details-modal {
+    max-width: 100%;
+    min-width: 704px;
+    padding: 32px;
+  }
+}
 
 .ex-details-close {
   background-color: inherit;
@@ -1041,6 +1048,10 @@ img {
   height: 42px;
   width: 167px;
 }
+.remove-from-favorites-btn {
+  min-width: 228px;
+}
+
 .remove-from-favorites-btn:hover,
 .remove-from-favorites-btn:focus,
 .add-favorites-btn:hover,
@@ -1073,7 +1084,7 @@ img {
   border-radius: 30px;
   transition: all 600ms ease-in-out;
   height: 42px;
-  width: 122px;
+  min-width: 122px;
 }
 .give-rating-btn:hover,
 .give-rating-btn:focus {
@@ -1084,7 +1095,8 @@ img {
 .ex-details-buttons {
   display: flex;
   align-items: center;
-  column-gap: 6px;
+  flex-wrap: wrap;
+  gap: 6px;
   justify-content: center;
 }
 .main-modal-img {
@@ -1149,6 +1161,13 @@ img {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
+}
+@media screen and (min-width: 768px) {
+  .info-card {
+    display: flex;
+    column-gap: 28px;
+    align-items: center;
+  }
 }
 
 .rating__body {
