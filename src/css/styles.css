@@ -653,8 +653,8 @@ img {
   transition: all 600ms ease-in-out;
 }
 .footer-input:focus-within {
-   border-color: aqua;
-   outline: none;
+  border-color: aqua;
+  outline: none;
 }
 
 .footer-subscribe-btn {
@@ -769,6 +769,16 @@ img {
   row-gap: 15px;
   padding: 20px;
 }
+.wrapper-favorite {
+  background-color: var(--color-black);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  column-gap: 18px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
 .favorites-icon-container {
   background-color: var(--color-white);
   color: var(--color-white);
@@ -793,6 +803,42 @@ img {
   text-align: center;
   margin-top: 40px;
   max-width: 318px;
+}
+@media screen and (min-width: 768px) {
+  .section-favorites {
+    padding-top: 76px;
+  }
+  .favorites-title {
+    font-size: 44px;
+    line-height: 1.09;
+    margin-bottom: 32px;
+  }
+  .wrapper-favorite {
+    padding: 40px;
+    margin-bottom: 16px;
+  }
+  .favorite-quote-text-container {
+    width: 100%;
+  }
+  .favorites-help-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    column-gap: 16px;
+  }
+  .favorites-wrapper-quote {
+    min-width: 344px;
+    padding: 20px;
+  }
+  .favorites-image-container {
+    margin: 0;
+  }
+  .text-no-favorites {
+    max-width: 554px;
+    margin: 132px auto;
+    font-size: 18px;
+    line-height: 1.33;
+  }
 }
 /* ======================================================================================================= */
 /* ============================================================================================================ */
@@ -842,6 +888,7 @@ img {
   justify-content: center;
   border-radius: 20px;
 }
+.exercise-item,
 .exercise-card {
   background-color: var(--color-megawhite);
   padding: 16px;
@@ -891,7 +938,12 @@ img {
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 20px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 .text-card {
   color: rgba(36, 36, 36, 0.4);
@@ -907,7 +959,13 @@ img {
   font-weight: 400;
   line-height: 1.5;
   text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-box-orient: horizontal;
+  -webkit-line-clamp: 1;
 }
+
 .third-part {
   display: flex;
   align-items: center;
@@ -919,6 +977,12 @@ img {
 }
 .exercise-section-title-span {
   text-transform: capitalize;
+}
+@media screen and (min-width: 768px) {
+  .exercise-item, 
+  .exercise-card {
+    width: calc((100% - 16px) / 2);
+  }
 }
 /* ======================================================================================= */
 /* ===================== CARD DETAILS CSS ================================================ */
