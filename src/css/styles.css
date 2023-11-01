@@ -916,13 +916,12 @@ img {
 }
 
 .favorites-icon-container {
-  background-color: var(--color-white);
-  color: var(--color-white);
+  
 }
 .favorites-gym-icon {
   fill: var(--color-black);
   display: block;
-  background-color: var(--color-white);
+  background-color: var(--color-megawhite);
 }
 
 .favorites-image-container {
@@ -974,6 +973,30 @@ img {
     margin: 132px auto;
     font-size: 18px;
     line-height: 1.33;
+  }
+}
+@media screen and (min-width: 1440px) {
+   .section-favorites {
+    padding-top: 66px;
+   }
+
+  .favorites-title {
+    margin-bottom: 44px;
+  }
+  .wrapper-favorite {
+    width: 494px;
+  }
+  .favorites-wrapper-quote {
+    max-width: 239px;
+    min-width: 239px;
+    padding: 25px 95px 25px 25px;
+  }
+  .favorites-image-container {
+    width: 239px;
+  }
+  .desktop-favorites-transform {
+    display: flex;
+    column-gap: 32px;
   }
 }
 /* ======================================================================================================= */
@@ -1693,6 +1716,13 @@ img {
 /* =============================== FAVORITES CARDS ============================================= */
 .list-fav {
   margin-top: 40px;
+}
+@media screen and (min-width: 1440px) {
+  .list-fav {
+    margin-top: 0px;
+    max-height: 540px;
+    overflow-y: scroll;
+  }
 }
 .exercise-item {
   background-color: var(--color-megawhite);
