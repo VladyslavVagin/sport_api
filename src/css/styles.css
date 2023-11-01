@@ -999,7 +999,7 @@ img {
 }
 
 .ex-details-modal {
-  max-width: 335px;
+  min-width: 335px;
   background-color: var(--color-black);
   border-radius: 20px;
   padding: 14px 20px 40px 20px;
@@ -1093,16 +1093,18 @@ img {
   border-color: var(--color-black);
 }
 .ex-details-buttons {
+  width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 6px;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .main-modal-img {
   border-radius: 12px;
   height: 258px;
-  width: 100%;
+  width: 295px;
+  margin: 0 auto;
 }
 
 .modal-header {
@@ -1120,7 +1122,7 @@ img {
 .rating__value {
   color: var(--color-white);
   font-size: 12px;
-  padding: 0 10px 0 0;
+  padding: 0 0 0 0;
 }
 
 .rating {
@@ -1166,7 +1168,17 @@ img {
   .info-card {
     display: flex;
     column-gap: 28px;
-    align-items: center;
+    align-items: flex-start;
+  }
+  .main-modal-img {
+    min-width: 270px;
+    min-height: 259px;
+    margin-bottom: 64px;
+  }
+
+  .modal-header {
+    margin-top: 0px;
+    margin-bottom: 8px;
   }
 }
 
