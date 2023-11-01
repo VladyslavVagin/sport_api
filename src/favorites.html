@@ -108,6 +108,14 @@
         <div class="favorites-image-container">
           <picture>
             <source
+            media="(min-width: 768px)"
+            srcset="
+              ./images/hero/hero-tablet.jpg    1x,
+              ./images/hero/hero-tablet-2x.jpg 2x
+            "
+            type="image/jpg"
+          />
+            <source
               media="(max-width: 767px)"
               srcset="
                 ./images/favorites/favorites-mob.jpg    1x,

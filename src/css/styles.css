@@ -211,7 +211,7 @@ img {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
-  letter-spacing: -0.28px;
+  letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
 .hero-image {
@@ -248,13 +248,30 @@ img {
   }
   .hero {
     padding-top: 76px;
-    padding-bottom: 40px;
+    padding-bottom: 64px;
   }
   .hero-title {
     font-size: 74px;
     line-height: 1;
     letter-spacing: -1.48px;
-    max-width: 593px;
+    max-width: 37.0625rem;
+  }
+  .hero-icon {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+  .hero-text {
+    font-size: 1.125rem;
+    line-height: 1.33;
+    max-width: 33rem;
+  }
+  .tags-list {
+    column-gap: 1rem;
+    justify-content: flex-end;
+  }
+  .tags-list-item {
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
 /* ================================================================================= */
@@ -327,6 +344,13 @@ img {
   line-height: 1.35;
   letter-spacing: -0.035rem;
 }
+.exercises-title span {
+  color: rgba(36, 36, 36, 0.50);
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
 .search-btn-icon {
   fill: var(--color-white);
   stroke: var(--color-black);
@@ -375,6 +399,39 @@ img {
   bottom: -8px;
   left: 6%;
   border-radius: 2px;
+}
+@media screen and (min-width: 768px) {
+  .exercises-title {
+    font-size: 2.75rem;
+    line-height: 1.09;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+  .exercises-title span {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  .nav-exercise-btn {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .nav-exercise {
+    margin-top: 0px;
+    margin-bottom: 32px;
+  }
+  .form-search-input {
+    padding: 0px;
+    margin-bottom: 32px;
+  }
+  .search-input {
+    max-width: 271px;
+    font-size: 16px;
+  }
+  .search-btn {
+    right: 62%;
+    top: 26%;
+  }
 }
 /* ================== CARDS EXERCISES ======================================== */
 .list-all-cards {
@@ -1353,7 +1410,6 @@ img {
   transform: translate(-50%, -50%);
   overflow-y: scroll;
 }
-
 .modal {
   max-width: 335px;
   background-color: var(--color-black);
@@ -1365,3 +1421,4 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/* ================================================================================================== */
