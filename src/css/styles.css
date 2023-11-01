@@ -321,6 +321,7 @@ img {
   }
 }
 @media screen and (max-width: 1439.98px) {
+  .quote-desktop-container,
   .desktop-hero-title-box {
     overflow: hidden;
     position: absolute;
@@ -498,6 +499,29 @@ img {
     align-items: center;
   }
 }
+@media screen and (min-width: 1440px) {
+  .exercises {
+    padding-bottom: 130;
+  }
+
+  .exercises-navigation-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .form-search-input {
+    margin-right: 32px;
+  }
+.quote-desktop-container {
+  min-width: 444px;
+}
+
+  .desktop-magic {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 32px;
+  }
+}
 /* ================== CARDS EXERCISES ======================================== */
 .list-all-cards {
   display: flex;
@@ -669,6 +693,28 @@ img {
     padding: 40px;
   }
 }
+@media screen and (min-width: 1440px) {
+  .quote-section {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+  }
+  .quote-desktop-container {
+    width: 444px;
+  }
+  .wrapper-quote, 
+  .wrapper {
+    min-width: 100%;
+  }
+}
+
 /* =========================================================================================================================== */
 /* =================================================================================================================================== */
 /*================================================ FOOTER ==================================================== */
@@ -804,6 +850,20 @@ img {
     justify-content: space-between;
     margin: 0px;
     width: 100%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .otro-part-footer {
+    max-width: 86%;
+    display: flex;
+    align-items: flex-start;
+    column-gap: 158px;
+  }
+  .footer-title {
+    min-width: 554px;
+  }
+  .footer-subscribe-container {
+    min-width: 540px;
   }
 }
 /* ============================================================================================= */
