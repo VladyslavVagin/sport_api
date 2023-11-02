@@ -388,7 +388,13 @@ img {
   border: 1px solid var(--color-border);
   padding: 8px;
   border-radius: 10px;
+  transition: all 400ms ease-in-out;
 }
+.social-item-icon:hover, .social-item-icon:focus {
+  background-color: var(--color-white);
+  fill: var(--color-black);
+}
+
 .burger-social-list {
   display: flex;
   align-items: center;
@@ -1823,6 +1829,7 @@ img {
   right: 5%;
   border: 1px solid var(--color-white);
   opacity: 0.8;
+  cursor: pointer;
 }
 .up-btn-container:hover,
 .up-btn-container:focus {
