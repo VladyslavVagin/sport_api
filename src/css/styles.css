@@ -775,6 +775,7 @@ img {
   border-radius: 30px;
   border: 1px solid var(--color-white);
   transition: all 600ms ease-in-out;
+  color: var(--color-white);
 }
 .footer-input:focus-within {
   border-color: aqua;
